@@ -1,12 +1,12 @@
 package com.gmi.prospect;
 
-// Model class for one course
+// Model class: holds the data for one course
 public class Course {
 
-    private String name;
-    private String category;   // DIPLOMA, GAPP or GUFP
-    private String duration;
-    private String requirement;
+    private final String name;
+    private final String category;     // DIPLOMA, GAPP or GUFP
+    private final String duration;
+    private final String requirement;
 
     public Course(String name, String category, String duration, String requirement) {
         this.name = name;
