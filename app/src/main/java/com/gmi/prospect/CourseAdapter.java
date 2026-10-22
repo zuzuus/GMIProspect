@@ -1,19 +1,22 @@
 package com.gmi.prospect;
 
-import android.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gmi.prospect.databinding.ItemCourseBinding;
 
 import java.util.ArrayList;
 
-// Adapter to show the courses in the RecyclerView
+// Connects the course list to the cards in the RecyclerView
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
+
+    private static final String TAG = "CourseAdapter";
 
     private ArrayList<Course> courseList;
 
@@ -21,7 +24,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         this.courseList = courseList;
     }
 
-    // Called when the filter button is pressed or when data arrives from the web
+    // Called by the filter buttons and when the web data arrives
     public void updateList(ArrayList<Course> newList) {
         courseList = newList;
         notifyDataSetChanged();
@@ -30,7 +33,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Data binding: inflate item_course.xml through its binding class
         ItemCourseBinding binding = ItemCourseBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false);
         return new ViewHolder(binding);
@@ -39,19 +41,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Course course = courseList.get(position);
+        Log.v(TAG, "Showing card " + position + ": " + course.getName());
+
         holder.binding.tvCategory.setText(course.getCategory());
         holder.binding.tvName.setText(course.getName());
         holder.binding.tvDuration.setText("Duration: " + course.getDuration());
 
-        // Show entry requirement when the course is clicked
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(v.getContext())
-                        .setTitle(course.getName())
-                        .setMessage("Entry Requirement (SPM):\n\n" + course.getRequirement())
-                        .setPositiveButton("OK", null)
-                        .show();
+                showRequirementDialog(v, course);
             }
         });
     }
@@ -61,8 +60,17 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         return courseList.size();
     }
 
+    private void showRequirementDialog(View v, Course course) {
+        new AlertDialog.Builder(v.getContext())
+                .setTitle(course.getName())
+                .setMessage("Entry Requirement (SPM):\n\n" + course.getRequirement())
+                .setPositiveButton("OK", null)
+                .show();
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ItemCourseBinding binding;
+
+        private final ItemCourseBinding binding;
 
         public ViewHolder(ItemCourseBinding binding) {
             super(binding.getRoot());
