@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Diploma of Mechanical Engineering Technology (Manufacturing)",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma of Mechanical Engineering Technology (CNC Precision)",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma of Mechatronics Engineering Technology",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma of Engineering Technology (Instrumentation and Control)",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Engineering Technology (Sustainable Energy and Power Distribution)",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Autotronics Engineering Technology",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Precision Tooling Engineering Technology",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Industrial Quality Engineering Technology",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Innovative Product Design Engineering Technology",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Cyber Security",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in Mathematics + 1 Science subject + 1 other subject, and pass English"
+  },
+  {
+    "name": "Diploma in Engineering Technology (Industrial Design)",
+    "category": "DIPLOMA",
+    "duration": "3 years",
+    "requirement": "Credit in any 3 subjects"
+  },
+  {
+    "name": "German A-Level Preparatory Programme (GAPP)",
+    "category": "GAPP",
+    "duration": "About 2 years",
+    "requirement": "Minimum C in English, Mathematics, Additional Mathematics, Physics and Chemistry"
+  },
+  {
+    "name": "GMI-UTP Foundation Programme (GUFP)",
+    "category": "GUFP",
+    "duration": "1 year",
+    "requirement": "Minimum C in Bahasa Melayu, Mathematics, English, Additional Mathematics, Physics and Chemistry"
+  }
+]
