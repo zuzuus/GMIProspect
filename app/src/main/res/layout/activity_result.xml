@@ -24,14 +24,14 @@
                 android:layout_height="52dp"
                 android:background="@drawable/btn_yellow"
                 android:padding="0dp"
-                android:text="&lt;"
+                android:text="@string/btn_back"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
-                android:text="RESULT"
+                android:text="@string/title_result"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -43,7 +43,7 @@
             android:layout_height="64dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:contentDescription="Result sign"
+            android:contentDescription="@string/sign_desc"
             android:src="@drawable/ic_wrong" />
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/btn_yellow"
-            android:text="Try Again"
+            android:text="@string/btn_try_again"
             android:textColor="@color/black" />
 
         <Button
@@ -72,6 +72,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Contact GMI" />
+            android:text="@string/btn_contact_gmi" />
     </LinearLayout>
 </layout>
