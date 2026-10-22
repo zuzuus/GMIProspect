@@ -13,7 +13,11 @@ import com.gmi.prospect.databinding.ActivityContactBinding;
 // Contact & About Us page (both on one screen)
 public class ContactActivity extends AppCompatActivity {
 
-    ActivityContactBinding binding;
+    private static final String PHONE_NUMBER = "0389219000";
+    private static final String MAP_LOCATION =
+            "geo:2.933958,101.7979588?q=German-Malaysian Institute";
+
+    private ActivityContactBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,42 +31,44 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
 
-        // Open phone dialer
+        // Implicit intents: Android picks the right app
         binding.btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0389219000"));
-                startActivity(intent);
+                openIntent(Intent.ACTION_DIAL, "tel:" + PHONE_NUMBER);
             }
         });
 
-        // Open email app
         binding.btnEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + getString(R.string.gmi_email)));
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Enquiry about GMI courses");
-                startActivity(intent);
+                sendEmail();
             }
         });
 
-        // Open Google Maps at GMI
         binding.btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("geo:2.933958,101.7979588?q=German-Malaysian Institute"));
-                startActivity(intent);
+                openIntent(Intent.ACTION_VIEW, MAP_LOCATION);
             }
         });
 
-        // Open GMI website
         binding.btnWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.gmi_website)));
-                startActivity(intent);
+                openIntent(Intent.ACTION_VIEW, getString(R.string.gmi_website));
             }
         });
+    }
+
+    private void openIntent(String action, String uri) {
+        startActivity(new Intent(action, Uri.parse(uri)));
+    }
+
+    private void sendEmail() {
+        Intent intent = new Intent(Intent.ACTION_SENDTO,
+                Uri.parse("mailto:" + getString(R.string.gmi_email)));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Enquiry about GMI courses");
+        startActivity(intent);
     }
 }
