@@ -2,6 +2,65 @@
 <resources>
     <string name="app_name">GMI Prospect</string>
 
+    <!-- ===== Shared ===== -->
+    <string name="btn_back">&lt;</string>
+
+    <!-- ===== Home (activity_main) ===== -->
+    <string name="home_logo_desc">GMI logo</string>
+    <string name="home_subtitle">GERMAN-MALAYSIAN INSTITUTE</string>
+    <string name="home_app_name">PROSPECT APP</string>
+    <string name="home_select">&gt; SELECT AN OPTION &lt;</string>
+    <string name="btn_courses">Courses Offered</string>
+    <string name="btn_eligibility">Eligibility Check</string>
+    <string name="btn_contact">Contact &amp; About Us</string>
+    <string name="home_footer">(C) 2026 GMI PROSPECT  V1.0</string>
+
+    <!-- ===== Courses (activity_courses) ===== -->
+    <string name="title_courses">COURSES</string>
+    <string name="filter_all">All</string>
+    <string name="filter_diploma">Diploma</string>
+    <string name="filter_gapp">GAPP</string>
+    <string name="filter_gufp">GUFP</string>
+    <string name="courses_loading">Loading courses...</string>
+
+    <!-- ===== Eligibility (activity_eligibility) ===== -->
+    <string name="title_eligibility">ELIGIBILITY</string>
+    <string name="label_name">NAME</string>
+    <string name="hint_name">Enter your name</string>
+    <string name="label_spm">SPM RESULTS</string>
+    <string name="subject_bm">Bahasa Melayu</string>
+    <string name="subject_english">English</string>
+    <string name="subject_sejarah">Sejarah</string>
+    <string name="subject_maths">Mathematics</string>
+    <string name="subject_add_maths">Additional Mathematics</string>
+    <string name="subject_physics">Physics</string>
+    <string name="subject_chemistry">Chemistry</string>
+    <string name="subject_biology">Biology</string>
+    <string name="btn_check">Check Eligibility</string>
+
+    <!-- ===== Admission (activity_admission) ===== -->
+    <string name="title_admission">ADMISSION</string>
+    <string name="sign_desc">Result sign</string>
+    <string name="label_choose_course">CHOOSE A COURSE:</string>
+    <string name="hint_phone">Phone number</string>
+    <string name="hint_email">Email</string>
+    <string name="btn_submit">Submit Application</string>
+
+    <!-- ===== Result (activity_result) ===== -->
+    <string name="title_result">RESULT</string>
+    <string name="btn_try_again">Try Again</string>
+    <string name="btn_contact_gmi">Contact GMI</string>
+
+    <!-- ===== Contact & About (activity_contact) ===== -->
+    <string name="title_contact">CONTACT &amp; ABOUT</string>
+    <string name="label_about">ABOUT US</string>
+    <string name="label_contact">CONTACT US</string>
+    <string name="btn_call">Call GMI</string>
+    <string name="btn_email">Send Email</string>
+    <string name="btn_map">Open Map</string>
+    <string name="btn_website">Visit Website</string>
+
+    <!-- ===== GMI details ===== -->
     <string name="gmi_address">Jalan Ilmiah, Taman Universiti, 43000 Kajang, Selangor</string>
     <string name="gmi_phone">03-8921 9000</string>
     <string name="gmi_email">marketing@gmi.edu.my</string>
