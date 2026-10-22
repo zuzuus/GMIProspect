@@ -4,51 +4,54 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.gmi.prospect.databinding.ActivityMainBinding;
 
-// Home page with the main menu (Controller in MVC)
+// Home page with the main menu
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Cycle";
-    ActivityMainBinding binding;
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Data binding replaces setContentView + findViewById
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         Log.d(TAG, "onCreate");
-
 
         binding.btnCourses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CoursesActivity.class));
+                openScreen(CoursesActivity.class);
             }
         });
 
         binding.btnEligibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, EligibilityActivity.class));
+                openScreen(EligibilityActivity.class);
             }
         });
 
         binding.btnContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ContactActivity.class));
+                openScreen(ContactActivity.class);
             }
         });
     }
 
-    // ----- Activity life cycle callbacks (check them in Logcat, filter "Cycle") -----
+    // One helper instead of writing new Intent(...) three times
+    private void openScreen(Class<?> screen) {
+        startActivity(new Intent(this, screen));
+    }
+
+    // ----- Activity life cycle (open Logcat and filter "Cycle") -----
+
     @Override
     protected void onStart() {
         super.onStart();
