@@ -2,6 +2,7 @@ package com.gmi.prospect;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -14,27 +15,27 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-// User enters SPM results and the app checks which courses they can apply for
+// User enters SPM results and the app checks every course
 public class EligibilityActivity extends AppCompatActivity {
 
-    ActivityEligibilityBinding binding;
+    private static final String TAG = "EligibilityActivity";
 
-    String[] grades = {"-", "A+", "A", "A-", "B+", "B", "C+", "C", "D", "E", "G"};
+    public static final String KEY_NAME = "name";
+    public static final String KEY_COURSES = "courses";
+
+    private static final String NOT_TAKEN = "-";
+    private static final String[] GRADES =
+            {NOT_TAKEN, "A+", "A", "A-", "B+", "B", "C+", "C", "D", "E", "G"};
+    private static final int MIN_CREDITS = 3;
+
+    private ActivityEligibilityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_eligibility);
 
-        // Put the grades into every spinner
-        ArrayAdapter<String> gradeAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, grades);
-        gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner[] spinners = {binding.spBM, binding.spEnglish, binding.spSejarah, binding.spMaths,
-                binding.spAddMaths, binding.spPhysics, binding.spChemistry, binding.spBiology};
-        for (Spinner sp : spinners) {
-            sp.setAdapter(gradeAdapter);
-        }
+        setupSpinners();
 
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,42 +52,66 @@ public class EligibilityActivity extends AppCompatActivity {
         });
     }
 
+    private void setupSpinners() {
+        ArrayAdapter<String> gradeAdapter = new ArrayAdapter<>(
+                this, android.R.layout.simple_spinner_item, GRADES);
+        gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Spinner[] spinners = {
+                binding.spBM, binding.spEnglish, binding.spSejarah, binding.spMaths,
+                binding.spAddMaths, binding.spPhysics, binding.spChemistry, binding.spBiology
+        };
+
+        for (Spinner sp : spinners) {
+            sp.setAdapter(gradeAdapter);
+        }
+    }
+
     private void checkEligibility() {
         String name = binding.etName.getText().toString().trim();
 
-        // Validation
+        // ----- Validation -----
         if (name.isEmpty()) {
+            Log.w(TAG, "Check stopped: name is empty");
             binding.etName.setError("Please enter your name");
-            Snackbar.make(binding.getRoot(), "Please enter your name", Snackbar.LENGTH_SHORT).show();
+            showMessage("Please enter your name");
             return;
         }
 
-        String bm = binding.spBM.getSelectedItem().toString();
-        String english = binding.spEnglish.getSelectedItem().toString();
-        String sejarah = binding.spSejarah.getSelectedItem().toString();
-        String maths = binding.spMaths.getSelectedItem().toString();
-        String addMaths = binding.spAddMaths.getSelectedItem().toString();
-        String physics = binding.spPhysics.getSelectedItem().toString();
-        String chemistry = binding.spChemistry.getSelectedItem().toString();
-        String biology = binding.spBiology.getSelectedItem().toString();
+        binding.etName.setError(null);
 
-        if (bm.equals("-") || english.equals("-") || sejarah.equals("-") || maths.equals("-")) {
-            Snackbar.make(binding.getRoot(), "Please select grade for BM, English, Sejarah and Maths",
-                    Snackbar.LENGTH_SHORT).show();
+        String bm = grade(binding.spBM);
+        String english = grade(binding.spEnglish);
+        String sejarah = grade(binding.spSejarah);
+        String maths = grade(binding.spMaths);
+        String addMaths = grade(binding.spAddMaths);
+        String physics = grade(binding.spPhysics);
+        String chemistry = grade(binding.spChemistry);
+        String biology = grade(binding.spBiology);
+
+        if (bm.equals(NOT_TAKEN) || english.equals(NOT_TAKEN)
+                || sejarah.equals(NOT_TAKEN) || maths.equals(NOT_TAKEN)) {
+            Log.w(TAG, "Check stopped: a compulsory subject has no grade");
+            showMessage("Please select grade for BM, English, Sejarah and Maths");
             return;
         }
 
-        // Count how many credits (C and above)
-        String[] allGrades = {bm, english, sejarah, maths, addMaths, physics, chemistry, biology};
+        // ----- Count credits -----
         int credits = 0;
-        for (String g : allGrades) {
+
+        for (String g : new String[]{bm, english, sejarah, maths,
+                addMaths, physics, chemistry, biology}) {
             if (isCredit(g)) {
                 credits++;
             }
         }
 
-        boolean scienceCredit = isCredit(physics) || isCredit(chemistry) || isCredit(biology);
+        boolean hasScienceCredit =
+                isCredit(physics) || isCredit(chemistry) || isCredit(biology);
 
+        Log.d(TAG, "Credits = " + credits + ", science credit = " + hasScienceCredit);
+
+        // ----- Check every course -----
         ArrayList<String> eligibleCourses = new ArrayList<>();
 
         for (Course c : CourseData.getAllCourses()) {
@@ -94,9 +119,10 @@ public class EligibilityActivity extends AppCompatActivity {
             boolean eligible = false;
 
             if (req.equals(CourseData.REQ_DIPLOMA)) {
-                eligible = isCredit(maths) && scienceCredit && credits >= 3 && isPass(english);
+                eligible = isCredit(maths) && hasScienceCredit
+                        && credits >= MIN_CREDITS && isPass(english);
             } else if (req.equals(CourseData.REQ_DESIGN)) {
-                eligible = credits >= 3;
+                eligible = credits >= MIN_CREDITS;
             } else if (req.equals(CourseData.REQ_GAPP)) {
                 eligible = isCredit(english) && isCredit(maths) && isCredit(addMaths)
                         && isCredit(physics) && isCredit(chemistry);
@@ -110,32 +136,42 @@ public class EligibilityActivity extends AppCompatActivity {
             }
         }
 
-        // Put the data into a Bundle to send to the next activity
-        Bundle bundle = new Bundle();
-        bundle.putString("name", name);
-        bundle.putStringArrayList("courses", eligibleCourses);
+        Log.i(TAG, name + " is eligible for " + eligibleCourses.size() + " course(s)");
+        openNextScreen(name, eligibleCourses);
+    }
 
-        Intent intent;
-        if (eligibleCourses.size() > 0) {
-            // ELIGIBLE -> redirect to the admission page
-            intent = new Intent(EligibilityActivity.this, AdmissionActivity.class);
-        } else {
-            // NOT ELIGIBLE -> show result page
-            intent = new Intent(EligibilityActivity.this, ResultActivity.class);
-        }
+    // Eligible -> Admission page, not eligible -> Result page
+    private void openNextScreen(String name, ArrayList<String> eligibleCourses) {
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_NAME, name);
+        bundle.putStringArrayList(KEY_COURSES, eligibleCourses);
+
+        Class<?> next = eligibleCourses.isEmpty()
+                ? ResultActivity.class
+                : AdmissionActivity.class;
+
+        Intent intent = new Intent(this, next);
         intent.putExtras(bundle);
         startActivity(intent);
     }
 
-    // Credit = grade C and above
-    private boolean isCredit(String grade) {
-        return grade.equals("A+") || grade.equals("A") || grade.equals("A-")
-                || grade.equals("B+") || grade.equals("B")
-                || grade.equals("C+") || grade.equals("C");
+    private String grade(Spinner spinner) {
+        return spinner.getSelectedItem().toString();
     }
 
-    // Pass = grade E and above
-    private boolean isPass(String grade) {
-        return isCredit(grade) || grade.equals("D") || grade.equals("E");
+    // Credit = C and above
+    private boolean isCredit(String g) {
+        return g.equals("A+") || g.equals("A") || g.equals("A-")
+                || g.equals("B+") || g.equals("B")
+                || g.equals("C+") || g.equals("C");
+    }
+
+    // Pass = E and above
+    private boolean isPass(String g) {
+        return isCredit(g) || g.equals("D") || g.equals("E");
+    }
+
+    private void showMessage(String text) {
+        Snackbar.make(binding.getRoot(), text, Snackbar.LENGTH_SHORT).show();
     }
 }
