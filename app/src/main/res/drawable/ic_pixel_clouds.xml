@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pixel clouds that float above the GMI logo -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="324dp"
+    android:height="60dp"
+    android:viewportWidth="54"
+    android:viewportHeight="10">
+    <!-- cloud body -->
+    <path
+        android:fillColor="#F2F5FF"
+        android:pathData="M24,1h4v3h-4zM23,2h1v2h-1zM28,2h3v2h-3zM22,3h1v1h-1zM31,3h1v1h-1zM44,3h4v3h-4zM5,4h4v5h-4zM43,4h1v2h-1zM48,4h3v2h-3zM3,5h2v4h-2zM9,5h2v4h-2zM12,5h2v4h-2zM42,5h1v1h-1zM51,5h1v1h-1zM2,6h1v3h-1zM11,6h1v3h-1zM14,6h1v3h-1zM0,7h2v2h-2zM15,7h1v2h-1z" />
+    <!-- cloud shade underneath -->
+    <path
+        android:fillColor="#9FB0E6"
+        android:pathData="M23,4h8v1h-8zM43,6h8v1h-8zM1,9h14v1h-14z" />
+</vector>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <layout> tag turns on data binding for this screen -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy"
+        android:orientation="vertical">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gmi_red"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/PixelButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/btn_yellow"
+                android:padding="0dp"
+                android:text="&lt;"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="COURSES"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Filter buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <Button
+                android:id="@+id/btnAll"
+                style="@style/PixelButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:text="All"
+                android:textSize="8sp" />
+
+            <Button
+                android:id="@+id/btnDiploma"
+                style="@style/PixelButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:text="Diploma"
+                android:textSize="8sp" />
+
+            <Button
+                android:id="@+id/btnGapp"
+                style="@style/PixelButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:text="GAPP"
+                android:textSize="8sp" />
+
+            <Button
+                android:id="@+id/btnGufp"
+                style="@style/PixelButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:text="GUFP"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <!-- Shows loading / offline message -->
+        <TextView
+            android:id="@+id/tvStatus"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="6dp"
+            android:text="Loading courses..." />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCourses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+    </LinearLayout>
+</layout>

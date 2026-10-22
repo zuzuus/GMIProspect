@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pixel night sky behind the home screen -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="640dp"
+    android:viewportWidth="90"
+    android:viewportHeight="160">
+    <!-- small stars -->
+    <path
+        android:fillColor="#66FFFFFF"
+        android:pathData="M13,0h1v1h-1zM66,5h1v1h-1zM89,16h1v1h-1zM3,18h1v1h-1zM5,19h1v1h-1zM4,22h1v1h-1zM0,37h1v1h-1zM7,48h1v1h-1zM6,56h1v1h-1zM84,59h1v1h-1zM89,66h1v1h-1zM73,78h1v1h-1zM7,79h1v1h-1zM54,80h1v1h-1zM72,81h1v1h-1zM14,87h1v1h-1zM40,87h1v1h-1zM63,87h1v1h-1zM85,88h1v1h-1zM88,89h1v1h-1zM21,91h1v1h-1zM58,92h1v1h-1zM12,93h1v1h-1zM66,93h1v1h-1zM45,97h1v1h-1zM36,98h1v1h-1zM50,100h2v1h-2zM50,101h1v1h-1zM74,101h1v1h-1zM81,102h1v1h-1zM35,106h1v1h-1zM55,107h1v1h-1zM62,107h1v1h-1zM21,114h1v1h-1zM87,114h1v1h-1zM74,116h1v1h-1zM2,118h1v1h-1zM62,119h1v1h-1zM34,121h1v1h-1zM46,121h1v1h-1zM13,123h1v1h-1zM61,123h1v1h-1zM1,124h1v1h-1zM76,127h1v1h-1zM15,131h2v1h-2zM38,134h1v1h-1zM3,135h1v1h-1zM26,135h1v1h-1zM53,136h1v1h-1zM63,136h1v1h-1zM9,137h1v1h-1zM88,139h1v1h-1zM51,140h1v1h-1zM55,140h1v1h-1zM11,141h1v1h-1zM5,142h1v1h-1zM58,143h1v1h-1zM71,146h1v1h-1zM7,147h1v1h-1zM10,147h1v1h-1zM82,147h1v1h-1zM13,148h1v1h-1zM28,149h1v1h-1zM59,149h1v1h-1zM44,154h1v1h-1zM47,156h1v1h-1zM26,157h1v1h-1zM46,157h1v1h-1z" />
+    <!-- plus-shaped stars -->
+    <path
+        android:fillColor="#CCFFD23F"
+        android:pathData="M5,4h1v3h-1zM4,5h1v1h-1zM6,5h1v1h-1zM85,45h1v3h-1zM84,46h1v1h-1zM86,46h1v1h-1zM2,62h1v3h-1zM1,63h1v1h-1zM3,63h1v1h-1zM63,80h1v3h-1zM62,81h1v1h-1zM64,81h1v1h-1zM47,94h1v3h-1zM46,95h1v1h-1zM48,95h1v1h-1zM53,95h1v3h-1zM52,96h1v1h-1zM54,96h1v1h-1zM71,100h1v3h-1zM70,101h1v1h-1zM72,101h1v1h-1zM26,104h1v3h-1zM59,104h1v3h-1zM80,104h1v3h-1zM25,105h1v1h-1zM27,105h1v1h-1zM32,105h1v3h-1zM58,105h1v1h-1zM60,105h1v1h-1zM79,105h1v1h-1zM81,105h1v1h-1zM31,106h1v1h-1zM33,106h1v1h-1zM80,108h1v3h-1zM79,109h1v1h-1zM81,109h1v1h-1z" />
+</vector>

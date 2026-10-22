@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pixel campus skyline at the bottom of the home screen -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="40">
+    <!-- buildings -->
+    <path
+        android:fillColor="#1E3092"
+        android:pathData="M52,11h16v27h-16zM40,15h12v23h-12zM68,15h12v23h-12zM14,19h10v19h-10zM96,19h10v19h-10zM0,25h14v13h-14zM106,25h14v13h-14zM24,27h16v11h-16zM80,27h16v11h-16z" />
+    <!-- rooftops -->
+    <path
+        android:fillColor="#2A4BD7"
+        android:pathData="M52,10h16v1h-16zM40,14h12v1h-12zM68,14h12v1h-12zM14,18h10v1h-10zM96,18h10v1h-10zM0,24h14v1h-14zM106,24h14v1h-14zM24,26h16v1h-16zM80,26h16v1h-16z" />
+    <!-- lit windows -->
+    <path
+        android:fillColor="@color/yellow"
+        android:pathData="M54,13h2v2h-2zM60,13h2v2h-2zM63,13h2v2h-2zM42,17h2v2h-2zM60,17h2v2h-2zM70,17h2v2h-2zM76,17h2v2h-2zM16,21h2v2h-2zM19,21h2v2h-2zM42,21h2v2h-2zM48,21h2v2h-2zM54,21h2v2h-2zM57,21h2v2h-2zM60,21h2v2h-2zM63,21h2v2h-2zM70,21h2v2h-2zM76,21h2v2h-2zM48,25h2v2h-2zM54,25h2v2h-2zM57,25h2v2h-2zM60,25h2v2h-2zM98,25h2v2h-2zM101,25h2v2h-2zM5,27h2v2h-2zM117,27h2v2h-2zM16,29h2v2h-2zM19,29h2v2h-2zM29,29h2v2h-2zM42,29h2v2h-2zM45,29h2v2h-2zM48,29h2v2h-2zM54,29h2v2h-2zM57,29h2v2h-2zM70,29h2v2h-2zM76,29h2v2h-2zM82,29h2v2h-2zM85,29h2v2h-2zM98,29h2v2h-2zM101,29h2v2h-2zM8,31h2v2h-2zM11,31h2v2h-2zM114,31h2v2h-2zM16,33h2v2h-2zM29,33h2v2h-2zM32,33h2v2h-2zM35,33h2v2h-2zM45,33h2v2h-2zM48,33h2v2h-2zM54,33h2v2h-2zM57,33h1v2h-1zM70,33h2v2h-2zM76,33h2v2h-2zM88,33h2v2h-2zM98,33h2v2h-2zM101,33h2v2h-2zM5,35h2v2h-2zM111,35h2v2h-2zM117,35h2v2h-2z" />
+    <!-- dark windows -->
+    <path
+        android:fillColor="#0E1A4F"
+        android:pathData="M57,13h2v2h-2zM45,17h2v2h-2zM48,17h2v2h-2zM54,17h2v2h-2zM57,17h2v2h-2zM63,17h2v2h-2zM73,17h2v2h-2zM45,21h2v2h-2zM73,21h2v2h-2zM98,21h2v2h-2zM101,21h2v2h-2zM16,25h2v2h-2zM19,25h2v2h-2zM42,25h2v2h-2zM45,25h2v2h-2zM63,25h2v2h-2zM70,25h2v2h-2zM73,25h2v2h-2zM76,25h2v2h-2zM2,27h2v2h-2zM8,27h2v2h-2zM11,27h2v2h-2zM108,27h2v2h-2zM111,27h2v2h-2zM114,27h2v2h-2zM26,29h2v2h-2zM32,29h2v2h-2zM35,29h2v2h-2zM60,29h2v2h-2zM63,29h2v2h-2zM73,29h2v2h-2zM88,29h2v2h-2zM91,29h2v2h-2zM2,31h2v2h-2zM5,31h2v2h-2zM108,31h2v2h-2zM111,31h2v2h-2zM117,31h2v2h-2zM19,33h2v2h-2zM26,33h2v2h-2zM42,33h2v2h-2zM63,33h2v2h-2zM73,33h2v2h-2zM82,33h2v2h-2zM85,33h2v2h-2zM91,33h2v2h-2zM2,35h2v2h-2zM8,35h2v2h-2zM11,35h2v2h-2zM108,35h2v2h-2zM114,35h2v2h-2z" />
+    <!-- main door -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M58,33h4v5h-4z" />
+    <!-- flag pole -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M60,3h1v7h-1z" />
+    <!-- red GMI flag -->
+    <path
+        android:fillColor="@color/gmi_red"
+        android:pathData="M61,3h4v3h-4z" />
+    <!-- ground -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M0,38h120v2h-120z" />
+</vector>

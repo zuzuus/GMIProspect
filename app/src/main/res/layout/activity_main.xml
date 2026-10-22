@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <layout> tag turns on data binding for this screen -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy">
+
+        <!-- Pixel night sky (fills the whole screen, behind everything) -->
+        <ImageView
+            android:id="@+id/ivStars"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_stars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Pixel campus skyline at the bottom -->
+        <ImageView
+            android:id="@+id/ivCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_pixel_city"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Pixel clouds above the logo. This is the HEAD of a "packed" vertical chain,
+             so the clouds, logo, title and buttons stay together in the middle of the free space. -->
+        <ImageView
+            android:id="@+id/ivClouds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_pixel_clouds"
+            app:layout_constraintBottom_toTopOf="@id/ivLogo"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Pixel GMI logo with the red dot on top of the I -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:contentDescription="GMI logo"
+            android:src="@drawable/ic_gmi_logo"
+            app:layout_constraintBottom_toTopOf="@id/tvSubtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivClouds" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="GERMAN-MALAYSIAN INSTITUTE"
+            app:layout_constraintBottom_toTopOf="@id/ivDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+        <ImageView
+            android:id="@+id/ivDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_pixel_divider"
+            app:layout_constraintBottom_toTopOf="@id/tvAppName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:shadowColor="@color/gmi_red"
+            android:shadowDx="6"
+            android:shadowDy="6"
+            android:shadowRadius="0.01"
+            android:text="PROSPECT APP"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/tvSelect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDivider" />
+
+        <!-- Blinking text (animation started in MainActivity) -->
+        <TextView
+            android:id="@+id/tvSelect"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="&gt; SELECT AN OPTION &lt;"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnCourses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAppName" />
+
+        <Button
+            android:id="@+id/btnCourses"
+            style="@style/PixelButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/btn_blue_3d"
+            android:drawableStart="@drawable/ic_px_book"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp"
+            android:text="Courses Offered"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnEligibility"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSelect" />
+
+        <Button
+            android:id="@+id/btnEligibility"
+            style="@style/PixelButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/btn_yellow_3d"
+            android:drawableStart="@drawable/ic_px_check"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp"
+            android:text="Eligibility Check"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/btnContact"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCourses" />
+
+        <Button
+            android:id="@+id/btnContact"
+            style="@style/PixelButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/btn_blue_3d"
+            android:drawableStart="@drawable/ic_px_mail"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp"
+            android:text="Contact &amp; About Us"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/tvFooter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnEligibility" />
+
+        <TextView
+            android:id="@+id/tvFooter"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="(C) 2026 GMI PROSPECT  V1.0"
+            android:textColor="@color/grey"
+            android:textSize="7sp"
+            app:layout_constraintBottom_toTopOf="@id/ivCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

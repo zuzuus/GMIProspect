@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <layout> tag turns on data binding for this screen -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy"
+        android:orientation="vertical">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gmi_red"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/PixelButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/btn_yellow"
+                android:padding="0dp"
+                android:text="&lt;"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="ELIGIBILITY"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- ScrollView so the long form can scroll -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NAME" />
+
+                <EditText
+                    android:id="@+id/etName"
+                    style="@style/CardText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/box_input"
+                    android:hint="Enter your name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="SPM RESULTS" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/box_card"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Bahasa Melayu" />
+                    <Spinner android:id="@+id/spBM" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="English" />
+                    <Spinner android:id="@+id/spEnglish" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Sejarah" />
+                    <Spinner android:id="@+id/spSejarah" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Mathematics" />
+                    <Spinner android:id="@+id/spMaths" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Additional Mathematics" />
+                    <Spinner android:id="@+id/spAddMaths" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Physics" />
+                    <Spinner android:id="@+id/spPhysics" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Chemistry" />
+                    <Spinner android:id="@+id/spChemistry" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                    <TextView style="@style/CardText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Biology" />
+                    <Spinner android:id="@+id/spBiology" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="6dp" android:background="@drawable/box_input" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnCheck"
+            style="@style/PixelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/btn_green"
+            android:text="Check Eligibility"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</layout>

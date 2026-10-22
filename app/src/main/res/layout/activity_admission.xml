@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <layout> tag turns on data binding for this screen -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy"
+        android:orientation="vertical">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gmi_red"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/PixelButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/btn_yellow"
+                android:padding="0dp"
+                android:text="&lt;"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="ADMISSION"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Correct / incorrect sign -->
+        <ImageView
+            android:id="@+id/ivSign"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Result sign"
+            android:src="@drawable/ic_correct" />
+
+        <!-- Congratulations message -->
+        <TextView
+            android:id="@+id/tvMessage"
+            style="@style/CardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/btn_green"
+            android:padding="14dp" />
+
+        <TextView
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="CHOOSE A COURSE:" />
+
+        <!-- Only the courses the prospect is eligible for -->
+        <ListView
+            android:id="@+id/listCourses"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/box_card"
+            android:choiceMode="singleChoice"
+            android:padding="4dp" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/CardText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/box_input"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:paddingStart="12dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/CardText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/box_input"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/PixelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/btn_red"
+            android:text="Submit Application" />
+    </LinearLayout>
+</layout>

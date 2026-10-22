@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="12"
+    android:viewportHeight="12">
+    <!-- black outline -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M0,0h2v1h-2zM8,0h2v1h-2zM0,1h1v1h-1zM2,1h1v1h-1zM7,1h1v1h-1zM9,1h1v1h-1zM1,2h1v1h-1zM3,2h1v1h-1zM6,2h1v1h-1zM8,2h1v1h-1zM2,3h1v1h-1zM4,3h2v1h-2zM7,3h1v1h-1zM3,4h1v1h-1zM6,4h1v1h-1zM3,5h1v1h-1zM6,5h1v1h-1zM2,6h1v1h-1zM4,6h2v1h-2zM7,6h1v1h-1zM1,7h1v1h-1zM3,7h1v1h-1zM6,7h1v1h-1zM8,7h1v1h-1zM0,8h1v1h-1zM2,8h1v1h-1zM7,8h1v1h-1zM9,8h1v1h-1zM0,9h2v1h-2zM8,9h2v1h-2z" />
+    <!-- red cross -->
+    <path
+        android:fillColor="@color/gmi_red"
+        android:pathData="M1,1h1v1h-1zM8,1h1v1h-1zM2,2h1v1h-1zM7,2h1v1h-1zM3,3h1v1h-1zM6,3h1v1h-1zM4,4h2v1h-2zM4,5h2v1h-2zM3,6h1v1h-1zM6,6h1v1h-1zM2,7h1v1h-1zM7,7h1v1h-1zM1,8h1v1h-1zM8,8h1v1h-1z" />
+</vector>

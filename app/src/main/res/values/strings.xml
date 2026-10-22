@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GMI Prospect</string>
+
+    <string name="gmi_address">Jalan Ilmiah, Taman Universiti, 43000 Kajang, Selangor</string>
+    <string name="gmi_phone">03-8921 9000</string>
+    <string name="gmi_email">marketing@gmi.edu.my</string>
+    <string name="gmi_website">https://www.gmi.edu.my</string>
+
+    <string name="about_text">The German-Malaysian Institute (GMI) was established in 1991 as a joint venture between the Governments of Malaysia and Germany.\n\nIt was founded by MARA and the Malaysian-German Chamber of Commerce and Industry (MGCC), with GIZ as an implementing agency.\n\nGMI offers engineering technology diplomas, the German A-Level Preparatory Programme (GAPP) and the GMI-UTP Foundation Programme (GUFP).</string>
+</resources>

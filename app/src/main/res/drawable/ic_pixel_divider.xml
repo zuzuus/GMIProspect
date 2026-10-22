@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pixel divider line -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="8dp"
+    android:viewportWidth="40"
+    android:viewportHeight="2">
+    <!-- yellow blocks -->
+    <path
+        android:fillColor="@color/yellow"
+        android:pathData="M0,0h2v2h-2zM8,0h2v2h-2zM16,0h2v2h-2zM24,0h2v2h-2zM32,0h2v2h-2z" />
+    <!-- red blocks -->
+    <path
+        android:fillColor="@color/gmi_red"
+        android:pathData="M4,0h2v2h-2zM12,0h2v2h-2zM20,0h2v2h-2zM28,0h2v2h-2zM36,0h2v2h-2z" />
+</vector>
