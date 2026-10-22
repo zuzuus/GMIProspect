@@ -25,14 +25,14 @@
                 android:layout_height="52dp"
                 android:background="@drawable/btn_yellow"
                 android:padding="0dp"
-                android:text="&lt;"
+                android:text="@string/btn_back"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
-                android:text="COURSES"
+                android:text="@string/title_courses"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -52,7 +52,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:padding="4dp"
-                android:text="All"
+                android:text="@string/filter_all"
                 android:textSize="8sp" />
 
             <Button
@@ -63,7 +63,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:padding="4dp"
-                android:text="Diploma"
+                android:text="@string/filter_diploma"
                 android:textSize="8sp" />
 
             <Button
@@ -74,7 +74,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:padding="4dp"
-                android:text="GAPP"
+                android:text="@string/filter_gapp"
                 android:textSize="8sp" />
 
             <Button
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="4dp"
-                android:text="GUFP"
+                android:text="@string/filter_gufp"
                 android:textSize="8sp" />
         </LinearLayout>
 
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginBottom="6dp"
-            android:text="Loading courses..." />
+            android:text="@string/courses_loading" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCourses"
