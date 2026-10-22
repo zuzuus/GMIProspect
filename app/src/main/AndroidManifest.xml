@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
     <!-- Needed by Volley to download the course list -->
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GMIProspect">
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -20,10 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".CoursesActivity" />
         <activity android:name=".EligibilityActivity" />
-        <activity android:name=".AdmissionActivity" />
+        <activity
+            android:name=".AdmissionActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".ContactActivity" />
     </application>
