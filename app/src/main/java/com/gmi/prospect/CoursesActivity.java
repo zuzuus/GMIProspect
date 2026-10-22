@@ -28,7 +28,7 @@ public class CoursesActivity extends AppCompatActivity {
 
     // Link to courses.json (change YOUR_USERNAME after uploading the file to GitHub)
     private static final String COURSES_URL =
-            "https://raw.githubusercontent.com/YOUR_USERNAME/gmi-prospect/main/courses.json";
+            "https://raw.githubusercontent.com/zuzuus/GMIProspect/master/courses.json";
 
     ActivityCoursesBinding binding;
     CourseAdapter adapter;
