@@ -24,14 +24,14 @@
                 android:layout_height="52dp"
                 android:background="@drawable/btn_yellow"
                 android:padding="0dp"
-                android:text="&lt;"
+                android:text="@string/btn_back"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
-                android:text="ADMISSION"
+                android:text="@string/title_admission"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -43,7 +43,7 @@
             android:layout_height="64dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:contentDescription="Result sign"
+            android:contentDescription="@string/sign_desc"
             android:src="@drawable/ic_correct" />
 
         <!-- Congratulations message -->
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="CHOOSE A COURSE:" />
+            android:text="@string/label_choose_course" />
 
         <!-- Only the courses the prospect is eligible for -->
         <ListView
@@ -82,7 +82,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/box_input"
-            android:hint="Phone number"
+            android:hint="@string/hint_phone"
             android:inputType="phone"
             android:paddingStart="12dp" />
 
@@ -95,7 +95,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/box_input"
-            android:hint="Email"
+            android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:paddingStart="12dp" />
 
@@ -106,6 +106,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:background="@drawable/btn_red"
-            android:text="Submit Application" />
+            android:text="@string/btn_submit" />
     </LinearLayout>
 </layout>
